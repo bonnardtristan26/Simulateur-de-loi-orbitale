@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include "systeme_solaire.h"
+
 
 // Structure pour représenter un corps céleste
 struct CorpsCeleste {
