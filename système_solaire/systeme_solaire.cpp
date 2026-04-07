@@ -2,10 +2,6 @@
 #include <vector>
 #include <cmath>
 
-#ifndef M_PI
-#define M_PI 3.14159265358979323846
-#endif
-
 // Structure pour représenter un corps céleste
 struct CorpsCeleste {
     std::string nom;
@@ -21,11 +17,22 @@ double calculerForceGravitationnelle(double masse1, double masse2, double distan
 }
 
 // Fonction pour calculer la période orbitale selon la troisième loi de Kepler
-// T^2 = (4*pi^2 / G*M) * a^3
 double calculerPeriodeOrbitale(double distance, double masseSoleil) {
     const double G = 6.67430e-11;
     return 2 * M_PI * sqrt((distance * distance * distance) / (G * masseSoleil));
 }
+
+void caclulerForceGravitationnelle(double masse1, double masse2, double distance) {
+    double force = calculerForceGravitationnelle(masse1, masse2, distance);
+    std::cout << "Force gravitationnelle: " << force << " N" << std::endl;
+}
+
+void calculerVitesseOrbitale(double distance, double masseSoleil) {
+    const double G = 6.67430e-11;
+    double vitesse = sqrt(G * masseSoleil / distance);
+    std::cout << "Vitesse orbitale: " << vitesse << " m/s" << std::endl;
+}
+
 
 int main() {
     // Initialisation des corps célestes (exemple simple avec Soleil et Terre)
@@ -51,61 +58,29 @@ int main() {
     systemeSolaire.push_back(uranus);
     systemeSolaire.push_back(neptune);
 
-    // Boucle de simulation
-    double dt = 3600 * 24; // Pas de temps en secondes (1 jour)
-    int iterations = 365 * 10; // 10 ans
+    // Boucle de simulation (à compléter)
+    double dt = 3600; // Pas de temps en secondes (1 heure)
+    int iterations = 1000;
     
     for (int i = 0; i < iterations; ++i) {
-        // Mettre à jour chaque planète
-        for (size_t j = 1; j < systemeSolaire.size(); ++j) { // Commencer à 1 pour éviter le Soleil
-            CorpsCeleste& planete = systemeSolaire[j];
-            
-            // Calculer la distance au Soleil
-            double dx = planete.positionX - soleil.positionX;
-            double dy = planete.positionY - soleil.positionY;
-            double distance = sqrt(dx * dx + dy * dy);
-            
-            // Calculer la force gravitationnelle (magnitude)
-            double force = calculerForceGravitationnelle(soleil.masse, planete.masse, distance);
-            
-            // Direction de la force (vers le Soleil)
-            double fx = -force * dx / distance;
-            double fy = -force * dy / distance;
-            
-            // Accélération
-            double ax = fx / planete.masse;
-            double ay = fy / planete.masse;
-            
-            // Mettre à jour la vitesse
-            planete.vitesseX += ax * dt;
-            planete.vitesseY += ay * dt;
-            
-            // Mettre à jour la position
-            planete.positionX += planete.vitesseX * dt;
-            planete.positionY += planete.vitesseY * dt;
-        }
-        
-        // Afficher la position de la Terre tous les 365 jours
-        if (i % 365 == 0) {
-            std::cout << "Jour " << i << ": Terre en (" << systemeSolaire[3].positionX / 1.496e11 << ", " << systemeSolaire[3].positionY / 1.496e11 << ") UA" << std::endl;
-        }
-    }
-    
-    // Démonstration de la troisième loi de Kepler
-    // Les lois de Kepler décrivent le mouvement des planètes :
-    // 1ère loi : Les planètes décrivent des orbites elliptiques avec le Soleil en foyer.
-    // 2ème loi : Le rayon vecteur balaye des aires égales en des temps égaux.
-    // 3ème loi : Le carré de la période est proportionnel au cube du demi-grand axe.
-    std::cout << "\nTroisième loi de Kepler: T^2 ∝ a^3" << std::endl;
-    std::cout << "Planète\t\tDistance (UA)\tPériode théorique (ans)\tT^2 / a^3" << std::endl;
-    
-    for (size_t j = 1; j < systemeSolaire.size(); ++j) {
-        CorpsCeleste& planete = systemeSolaire[j];
-        double distanceUA = planete.positionX / 1.496e11; // Convertir en UA (Terre = 1 UA)
-        double periodeAns = calculerPeriodeOrbitale(planete.positionX, soleil.masse) / (365.25 * 24 * 3600); // En années
-        double t2_a3 = periodeAns * periodeAns / (distanceUA * distanceUA * distanceUA);
-        
-        std::cout << planete.nom << "\t\t" << distanceUA << "\t\t" << periodeAns << "\t\t\t" << t2_a3 << std::endl;
+        caclulerForceGravitationnelle(soleil.masse, mercure.masse, 5.791e10);
+        calculerForceGravitationnelle(soleil.masse, venus.masse, 1.082e11);
+        calculerForceGravitationnelle(soleil.masse, terre.masse, 1.496e11);    
+        calculerForceGravitationnelle(soleil.masse, mars.masse, 2.279e11);
+        calculerForceGravitationnelle(soleil.masse, jupiter.masse, 7.785e11);
+        calculerForceGravitationnelle(soleil.masse, saturne.masse, 1.433e12);
+        calculerForceGravitationnelle(soleil.masse, uranus.masse, 2.877e12);
+        calculerForceGravitationnelle(soleil.masse, neptune.masse, 4.503e12);
+
+        claculerPeriodeOrbitale(5.791e10, soleil.masse);
+        calculerPeriodeOrbitale(1.082e11, soleil.masse);
+        calculerPeriodeOrbitale(1.496e11, soleil.masse);
+        calculerPeriodeOrbitale(2.279e11, soleil.masse);
+        calculerPeriodeOrbitale(7.785e11, soleil.masse);
+        calculerPeriodeOrbitale(1.433e12, soleil.masse);
+        calculerPeriodeOrbitale(2.877e12, soleil.masse);
+        calculerPeriodeOrbitale(4.503e12, soleil.masse);
+
     }
     
     return 0;
