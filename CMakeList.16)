@@ -1,0 +1,27 @@
+cmake_minimum_required(VERSION 3.16)
+project(SolarSystem)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_AUTOMOC ON)   # génère les fichiers moc_ pour les signaux/slots Qt
+set(CMAKE_AUTOUIC ON)   # compile automatiquement les fichiers .ui
+set(CMAKE_AUTORCC ON)   # gère les ressources .qrc
+
+# Indique où Qt est installé (adapte le chemin à ta machine)
+set(CMAKE_PREFIX_PATH "C:/Qt/6.x.x/msvc2019_64")  # Windows
+# set(CMAKE_PREFIX_PATH "/home/toi/Qt/6.x.x/gcc_64")  # Linux
+
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+
+add_executable(SolarSystem
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.h
+    src/mainwindow.ui
+    src/simulation.cpp
+    src/simulation.h
+)
+
+target_link_libraries(SolarSystem
+    Qt6::Core
+    Qt6::Widgets
+)
