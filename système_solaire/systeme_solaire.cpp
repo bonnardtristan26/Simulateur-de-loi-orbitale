@@ -65,24 +65,17 @@ int main() {
     int iterations = 1000;
     
     for (int i = 0; i < iterations; ++i) {
-        caclulerForceGravitationnelle(soleil.masse, mercure.masse, 5.791e10);
-        calculerForceGravitationnelle(soleil.masse, venus.masse, 1.082e11);
-        calculerForceGravitationnelle(soleil.masse, terre.masse, 1.496e11);    
-        calculerForceGravitationnelle(soleil.masse, mars.masse, 2.279e11);
-        calculerForceGravitationnelle(soleil.masse, jupiter.masse, 7.785e11);
-        calculerForceGravitationnelle(soleil.masse, saturne.masse, 1.433e12);
-        calculerForceGravitationnelle(soleil.masse, uranus.masse, 2.877e12);
-        calculerForceGravitationnelle(soleil.masse, neptune.masse, 4.503e12);
-
-        claculerPeriodeOrbitale(5.791e10, soleil.masse);
-        calculerPeriodeOrbitale(1.082e11, soleil.masse);
-        calculerPeriodeOrbitale(1.496e11, soleil.masse);
-        calculerPeriodeOrbitale(2.279e11, soleil.masse);
-        calculerPeriodeOrbitale(7.785e11, soleil.masse);
-        calculerPeriodeOrbitale(1.433e12, soleil.masse);
-        calculerPeriodeOrbitale(2.877e12, soleil.masse);
-        calculerPeriodeOrbitale(4.503e12, soleil.masse);
-
+        cout << "Iteration: " << i + 1 << std::endl;
+        cout << "-----------------------------" << std::endl;
+        cout << "Soleil - Mercure: " << calculerForceGravitationnelle(soleil.masse, mercure.masse, 5.791e10) << " N" << std::endl;
+        cout << "Soleil - Venus: " << calculerForceGravitationnelle(soleil.masse, venus.masse, 1.082e11) << " N" << std::endl;
+        cout << "Soleil - Terre: " << calculerForceGravitationnelle(soleil.masse, terre.masse, 1.496e11) << " N" << std::endl;
+        cout << "Soleil - Mars: " << calculerForceGravitationnelle(soleil.masse, mars.masse, 2.279e11) << " N" << std::endl;
+        cout << "Soleil - Jupiter: " << calculerForceGravitationnelle(soleil.masse, jupiter.masse, 7.785e11) << " N" << std::endl;
+        cout << "Soleil - Saturne: " << calculerForceGravitationnelle(soleil.masse, saturne.masse, 1.433e12) << " N" << std::endl;
+        cout << "Soleil - Uranus: " << calculerForceGravitationnelle(soleil.masse, uranus.masse, 2.877e12) << " N" << std::endl;
+        cout << "Soleil - Neptune: " << calculerForceGravitationnelle(soleil.masse, neptune.masse, 4.503e12) << " N" << std::endl;
+        cout << "-----------------------------" << std::endl;
     }
     
     return 0;

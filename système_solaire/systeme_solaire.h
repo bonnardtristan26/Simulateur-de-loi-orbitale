@@ -23,8 +23,6 @@ public:
     void ajouterPlanete(const Planete& planete);
     void simulerOrbite(double temps);
     void afficherSysteme() const;
-    void caclulerForceGravitationnelle(double distance) const;
-    void calculerVitesseOrbitale(double distance) const;
 };
 
 #endif // SYSTEME_SOLAIRE_H
