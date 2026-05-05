@@ -25,7 +25,7 @@ def ForceGravitationnelle(masse_planet, masse_soleil, dx) :
 
 def calculerForceGravitationnelle(masse_planet, masse_soleil, dx) :
     G = 6.67430e-11
-    return G * masse_planet * masse_soleil * dx
+    return G * masse_planet * masse_soleil / dx
 
 planets = [
     ("Mercure", 1),
