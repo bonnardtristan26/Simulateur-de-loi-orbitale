@@ -12,7 +12,7 @@ CorpsCeleste = np.array([["Soleil", 1.989e30, 0.0, 0.0, 0.0, 0.0],
 ["Neptune", 1.024e26, 4.503e12, 0.0, 0.0, 5.4e3]])
 
 dt = 3600
-iterations = 1000
+
 
 def ForceGravitationnelle(masse_planet, masse_soleil, dx) :
     force = calculerForceGravitationnelle(masse_planet, masse_soleil, dx)

@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import math
  
 def to_cartesian(canvas_height, canvas_length, x, y):
 
@@ -61,7 +61,8 @@ root.mainloop()
 
 #bouton.pack(pady=10)
 ######################################################################
- 
+
+iterations = 1000
 
 for i in range(iterations):
     print("Iteration", i + 1)
