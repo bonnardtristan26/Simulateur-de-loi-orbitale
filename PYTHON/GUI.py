@@ -1,4 +1,10 @@
 import tkinter as tk
+import sys
+import os
+
+sys.path.append(os.path.abspath("C:/Users/tristan.bonnard.STFL/Documents/GitHub/Simulateur-de-loi-orbitale/système_solaire"))
+
+import systeme_solaire
  
 def to_cartesian(canvas_height, canvas_length, x, y):
 
@@ -15,7 +21,7 @@ root.geometry("1000x700")
 
 #CREATION DE LA FENETRE DE DESSIN
 ######################################################################
-canvas = tk.Canvas(root, width=600, height=400, bg='black')
+canvas = tk.Canvas(root, width=800, height=400, bg='black')
 
 canvas.pack(anchor=tk.CENTER, expand=True)
 ######################################################################
@@ -35,6 +41,10 @@ points =(
 )
 
 canvas.create_oval(*points, fill='yellow')
+
+######################################################################
+
+systeme_solaire.ForceGravitationnelle()
 
 # Lancement de la boucle principale
 
