@@ -50,13 +50,3 @@ for i in range(iterations):
         ax = Fx / m_p
         CorpsCeleste[idx][4] += ax * dt  # update vx
         CorpsCeleste[idx][2] += CorpsCeleste[idx][4] * dt  # update x
-    print("Soleil - Mercure: ", ForceGravitationnelle(CorpsCeleste[0][1], CorpsCeleste[1][2], CorpsCeleste[1][5]))
-    print("Soleil - Venus: ", ForceGravitationnelle(CorpsCeleste[0][1], CorpsCeleste[2][2], CorpsCeleste[2][5]))
-    print("Soleil - Terre:", ForceGravitationnelle(CorpsCeleste[0][1], CorpsCeleste[3][2], CorpsCeleste[3][5]))
-    print("Soleil - Mars:", ForceGravitationnelle(CorpsCeleste[0][1], CorpsCeleste[4][2], CorpsCeleste[4][5]))
-    print("Soleil - Jupiter", ForceGravitationnelle(CorpsCeleste[0][1], CorpsCeleste[5][2], CorpsCeleste[5][5]))
-    print("Soleil - Saturne",ForceGravitationnelle(CorpsCeleste[0][1], CorpsCeleste[6][2], CorpsCeleste[6][5]))
-    print("Soleil - Uranus", ForceGravitationnelle(CorpsCeleste[0][1], CorpsCeleste[7][2], CorpsCeleste[7][5]))
-    print("Soleil - Neptune", ForceGravitationnelle(CorpsCeleste[0][1], CorpsCeleste[8][2], CorpsCeleste[8][5]))
-    print("-----------------------------")
-

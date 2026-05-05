@@ -70,6 +70,11 @@ root.mainloop()
 
 #bouton.pack(pady=10)
 ######################################################################
- 
 
- 
+iterations = 1000
+
+for i in range(iterations):
+    print("Iteration", i + 1)
+    print("-----------------------------")
+    print("Soleil - " + name + ": Force gravitationnelle X :", Fx)
+    print("-----------------------------")
