@@ -3,7 +3,7 @@ import numpy as np
 
 CorpsCeleste = np.array([["Soleil", 1.989e30, 0.0, 0.0, 0.0, 0.0],
 ["Mercure", 3.285e23, 5.791e10, 0.0, 0.0, 4.8e4],
-["Venus", 4.867e24, 1.082e11, 0.0, 0.0, 3.5e4]
+["Venus", 4.867e24, 1.082e11, 0.0, 0.0, 3.5e4],
 ["Terre", 5.972e24, 1.496e11, 0.0, 0.0, 2.978e4]
 ["Mars", 6.39e23, 2.279e11, 0.0, 0.0, 2.41e4]
 ["Jupiter", 1.898e27, 7.785e11, 0.0, 0.0, 1.3e4]
@@ -14,24 +14,41 @@ CorpsCeleste = np.array([["Soleil", 1.989e30, 0.0, 0.0, 0.0, 0.0],
 dt = 3600
 iterations = 1000
 
-def ForceGravitationnelle(masse1, masse2, distance) :
-    force = calculerForceGravitationnelle(masse1, masse2, distance)
-    print("Force gravitationnelle :", force)
 
-def calculerForceGravitationnelle(masse1, masse2, distance) :
+PositionX = CorpsCeleste[:, 3]
+PositionY = CorpsCeleste[:, 4]
+
+
+def ForceGravitationnelle(masse_planet, masse_soleil, dx) :
+    force = calculerForceGravitationnelle(masse_planet, masse_soleil, dx)
+    return force
+
+def calculerForceGravitationnelle(masse_planet, masse_soleil, dx) :
     G = 6.67430e-11
-    return G * masse1 * masse2 / (distance * distance)
+    return G * masse_planet * masse_soleil * dx
+
+planets = [
+    ("Mercure", 1),
+    ("Venus", 2),
+    ("Terre", 3),
+    ("Mars", 4),
+    ("Jupiter", 5),
+    ("Saturne", 6),
+    ("Uranus", 7),
+    ("Neptune", 8)
+]
 
 for i in range(iterations):
     print("Iteration", i + 1)
     print("-----------------------------")
-    print("Soleil - Mercure: ", ForceGravitationnelle(CorpsCeleste[1][2], CorpsCeleste[2][3], CorpsCeleste[2][6]))
-    print("Soleil - Venus: ", ForceGravitationnelle(CorpsCeleste[1][2], CorpsCeleste[3][3], CorpsCeleste[3][6]))
-    print("Soleil - Terre:", ForceGravitationnelle(CorpsCeleste[1][2], CorpsCeleste[4][3], CorpsCeleste[4][6]))
-    print("Soleil - Mars:", ForceGravitationnelle(CorpsCeleste[1][2], CorpsCeleste[5][3], CorpsCeleste[5][6]))
-    print("Soleil - Jupiter", ForceGravitationnelle(CorpsCeleste[1][2], CorpsCeleste[6][3], CorpsCeleste[6][6]))
-    print("Soleil - Saturne",ForceGravitationnelle(CorpsCeleste[1][2], CorpsCeleste[7][3], CorpsCeleste[7][6]))
-    print("Soleil - Uranus", ForceGravitationnelle(CorpsCeleste[1][2], CorpsCeleste[8][3], CorpsCeleste[8][6]))
-    print("Soleil - Neptune", ForceGravitationnelle(CorpsCeleste[1][2], CorpsCeleste[9][3], CorpsCeleste[9][6]))
+    for name, idx in planets:
+        m_p = CorpsCeleste[idx][1]
+        m_s = CorpsCeleste[0][1]
+        dx = (-CorpsCeleste[idx][2])**2
+        Fx = ForceGravitationnelle(m_p, m_s, dx)
+        print("Soleil - " + name + ": Force gravitationnelle X :", Fx)
+        ax = Fx / m_p
+        CorpsCeleste[idx][4] += ax * dt  # update vx
+        CorpsCeleste[idx][2] += CorpsCeleste[idx][4] * dt  # update x
     print("-----------------------------")
 
