@@ -1,4 +1,5 @@
 import tkinter as tk
+
  
 def to_cartesian(canvas_height, canvas_length, x, y):
 
@@ -62,4 +63,8 @@ root.mainloop()
 ######################################################################
  
 
- 
+for i in range(iterations):
+    print("Iteration", i + 1)
+    print("-----------------------------")
+    print("Soleil - " + name + ": Force gravitationnelle X :", Fx)
+    print("-----------------------------")

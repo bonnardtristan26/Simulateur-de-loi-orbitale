@@ -14,11 +14,6 @@ CorpsCeleste = np.array([["Soleil", 1.989e30, 0.0, 0.0, 0.0, 0.0],
 dt = 3600
 iterations = 1000
 
-
-PositionX = CorpsCeleste[:, 3]
-PositionY = CorpsCeleste[:, 4]
-
-
 def ForceGravitationnelle(masse_planet, masse_soleil, dx) :
     force = calculerForceGravitationnelle(masse_planet, masse_soleil, dx)
     return force
@@ -26,6 +21,7 @@ def ForceGravitationnelle(masse_planet, masse_soleil, dx) :
 def calculerForceGravitationnelle(masse_planet, masse_soleil, dx) :
     G = 6.67430e-11
     return G * masse_planet * masse_soleil / dx
+
 
 planets = [
     ("Mercure", 1),
@@ -38,17 +34,13 @@ planets = [
     ("Neptune", 8)
 ]
 
-for i in range(iterations):
-    print("Iteration", i + 1)
-    print("-----------------------------")
+def update_positions_and_velocities():
     for name, idx in planets:
         m_p = CorpsCeleste[idx][1]
         m_s = CorpsCeleste[0][1]
         dx = (-CorpsCeleste[idx][2])**2
         Fx = ForceGravitationnelle(m_p, m_s, dx)
-        print("Soleil - " + name + ": Force gravitationnelle X :", Fx)
         ax = Fx / m_p
         CorpsCeleste[idx][4] += ax * dt  # update vx
         CorpsCeleste[idx][2] += CorpsCeleste[idx][4] * dt  # update x
-    print("-----------------------------")
 
