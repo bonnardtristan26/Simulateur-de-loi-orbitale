@@ -26,7 +26,7 @@ canvas = tk.Canvas(root, width=800, height=400, bg='black')
 canvas.pack(anchor=tk.CENTER, expand=True)
 ######################################################################
 
-#CERCLE
+#CERCLE SOLEIL
 
 hauteur = 400
 largeur = 600
@@ -42,9 +42,9 @@ points =(
 
 canvas.create_oval(*points, fill='yellow')
 
+#CERCLE MERCURE
 
-
-systeme_solaire.ForceGravitationnelle()
+#systeme_solaire.ForceGravitationnelle()
 
 
 root.mainloop()
