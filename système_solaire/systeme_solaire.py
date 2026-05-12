@@ -31,6 +31,7 @@ def calculerForceGravitationnelle(masse_planet, masse_soleil, dx) :
     G = 6.67430e-11
     return G * masse_planet * masse_soleil / dx
 
+def calcul
 planets = [
     ("Mercure", 1),
     ("Venus", 2),
@@ -46,12 +47,12 @@ for i in range(iterations):
     print("Iteration", i + 1)
     print("-----------------------------")
     for name, idx in planets:
-        m_p = CorpsCeleste[idx][1]
-        m_s = CorpsCeleste[0][1]
-        dx = float((CorpsCeleste[idx][2]))**2
+        m_p = CorpsCeleste[idx][0]
+        m_s = CorpsCeleste[0][0]
+        dx = float((CorpsCeleste[idx][1]))**2
         Fx = ForceGravitationnelle(m_p, m_s, dx)
         print("Soleil - " + name + ": Force gravitationnelle X :", Fx)
         ax = Fx / m_p
-        CorpsCeleste[idx][4] = CorpsCeleste[idx][4]
-        CorpsCeleste[idx][4] += ax * dt  # update vx
-        CorpsCeleste[idx][2] += CorpsCeleste[idx][4] * dt  # update x
+        CorpsCeleste[idx][3] = CorpsCeleste[idx][3]
+        CorpsCeleste[idx][3] += ax * dt  # update vx
+        CorpsCeleste[idx][1] += CorpsCeleste[idx][3] * dt  # update x
