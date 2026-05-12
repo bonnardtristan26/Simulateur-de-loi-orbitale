@@ -6,18 +6,6 @@ sys.path.append(os.path.abspath("C:/Users/tristan.bonnard.STFL/Documents/GitHub/
 
 import systeme_solaire
 
-#def a_lechelle(planete_height, planet_lenght) :
-    
-    #DISTANCE MAXIMALE DE CANVA
-    #planète la plus éloignée + marge de pixels pour pas que ça dépasse le canva = distance maximale
-    
-    #par rapport a cette distance max, il faudra remettre à l'échelle les distances des planètes pour que ça reste réaliste
-    #mais que ça reste visible dans le canva
- 
-def to_cartesian(canvas_height, canvas_length, x, y):
-
-    return (canvas_length/2) + x, (canvas_height/2) - y
- 
 # Création de la fenêtre principale
 ######################################################################
 root = tk.Tk()
@@ -33,6 +21,24 @@ canvas = tk.Canvas(root, width=800, height=400, bg='black')
 
 canvas.pack(anchor=tk.CENTER, expand=True)
 ######################################################################
+
+#FONCTIONS
+######################################################################
+#def a_lechelle(planete_height, planet_lenght) :
+    
+    #DISTANCE MAXIMALE DE CANVA
+    #planète la plus éloignée + marge de pixels pour pas que ça dépasse le canva = distance maximale
+    
+    #par rapport a cette distance max, il faudra remettre à l'échelle les distances des planètes pour que ça reste réaliste
+    #mais que ça reste visible dans le canva
+    
+    #et faudra faire de même pour la taille de la planète
+ 
+def to_cartesian(canvas_height, canvas_length, x, y):
+
+    return (canvas_length/2) + x, (canvas_height/2) - y
+ 
+ 
 
 #CERCLE SOLEIL
 
@@ -52,8 +58,8 @@ canvas.create_oval(*points, fill='yellow')
 
 #CERCLE MERCURE
 
-HG = to_cartesian(hauteur, systeme_solaire.CorpsCeleste[1][1], -20, -20)
-BD = to_cartesian(hauteur, largeur, 20, 20)
+HG = to_cartesian(hauteur, 1200, -20, -20)
+BD = to_cartesian(hauteur, 1200, 20, 20)
 
 
 points =(
