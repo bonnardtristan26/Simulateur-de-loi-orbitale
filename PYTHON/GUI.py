@@ -42,34 +42,12 @@ points =(
 
 canvas.create_oval(*points, fill='yellow')
 
-######################################################################
+
 
 systeme_solaire.ForceGravitationnelle()
 
-# Lancement de la boucle principale
 
 root.mainloop()
- 
-#AFFICHAGE D'UN TEXTE
-######################################################################
-#label_instruction = tk.Label(root, text="Entrez votre nom :")
-
-#label_instruction.pack(pady=10)
-######################################################################
- 
-#ZONE D'ENTREE DE TEXTE
-######################################################################
-#entree = tk.Entry(root)
-
-#entree.pack()
-######################################################################
-
-#BOUTON
-######################################################################
-#bouton = tk.Button(root, text="exemple", command=exemple-fonction)
-
-#bouton.pack(pady=10)
-######################################################################
 
 iterations = 1000
 
