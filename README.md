@@ -12,6 +12,8 @@
 
 ---
 
+<br>
+
 ## Fonctionnalités principales
 
 * Calcul des forces gravitationnelles (loi de Newton)
