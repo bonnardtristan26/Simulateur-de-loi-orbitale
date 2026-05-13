@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1 align="center" style="color: #0066cc;">Simulateur de Lois Orbitales</h1>
+# 🔵 Simulateur de Lois Orbitales
 
 ---
 
