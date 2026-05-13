@@ -15,9 +15,21 @@ CorpsCeleste = np.array([
     [1.024e26, 4.503e12, 0.0, 0.0, 5.4e3]
 ], dtype=float)
 
-dt = 3600
-iterations = 1000
+CorpsCelesteTest = np.array([
+    [1.989e30, 0.0, 0.0, 0.0, 0.0],
+    [3.285e23, 6.98e7, 0.0, 0.0, 4.8e4],
+    [4.867e24, 1.089e8, 0.0, 0.0, 3.5e4],
+    [5.972e24, 1.521e8, 0.0, 0.0, 2.978e4],
+    [6.39e23, 2.492e8, 0.0, 0.0, 2.41e4],
+    [1.898e27, 8.166e8, 0.0, 0.0, 1.3e4],
+    [5.683e26, 1.514e9, 0.0, 0.0, 9.7e3],
+    [8.681e25, 3.003e9, 0.0, 0.0, 6.8e3],
+    [1.024e26, 4.545e9, 0.0, 0.0, 5.4e3]
+], dtype=float)
 
+dt = 3600
+iterations = 10
+distance_max = 7.375e9
 
 PositionX = CorpsCeleste[:, 3]
 PositionY = CorpsCeleste[:, 4]
