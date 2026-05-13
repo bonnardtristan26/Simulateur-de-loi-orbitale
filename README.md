@@ -14,12 +14,16 @@
 
 <br>
 
+```
+
 ## Fonctionnalités principales
 
 * Calcul des forces gravitationnelles (loi de Newton)
 * Simulation du mouvement des planètes autour du Soleil
 * Interface visuelle pour visualiser les orbites
 * Données réalistes des masses et distances des planètes
+
+```
 
 <br>
 
