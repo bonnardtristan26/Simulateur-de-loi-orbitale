@@ -10,9 +10,7 @@
 * Calcule les forces gravitationnelles entre les corps célestes
 * Visualisation graphique avec interface Tkinter
 
-
 ---
-
 
 ## Fonctionnalités principales
 
@@ -22,16 +20,6 @@
 * Données réalistes des masses et distances des planètes
 
 ---
-
-
-
-
-
-
-
-
-
-
 
 ## Prérequis/Installation
 
@@ -43,7 +31,9 @@
 
 ---
 
-<br>
+- PYTHON/GUI.py → Interface graphique
+- système_solaire/systeme_solaire.py → Calculs physiques
 
-## 
+---
+
 
