@@ -38,4 +38,8 @@
 
 ---
 
+## Améliorations futures
 
+* Mieux ajuster l'échelle pour les distances
+* Ajouter plus de paramètres ajustables (zoom, vitesse simulation)
+* Améliorer les performances graphiques
