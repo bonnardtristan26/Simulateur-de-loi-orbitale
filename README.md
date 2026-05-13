@@ -1,6 +1,6 @@
 <div align="center">
 
-![Orbital Simulator](https://img.shields.io/badge/Simulateur-Lois%20Orbitales-blue?style=for-the-badge)
+<h1 align="center" style="color: #0066cc;">Simulateur de Lois Orbitales</h1>
 
 ---
 
