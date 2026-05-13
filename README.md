@@ -14,7 +14,6 @@
 
 <br>
 
-```
 
 ## Fonctionnalités principales
 
@@ -23,7 +22,7 @@
 * Interface visuelle pour visualiser les orbites
 * Données réalistes des masses et distances des planètes
 
-```
+---
 
 <br>
 
@@ -34,6 +33,10 @@
 > XXX
 
 > XXX
+
+---
+
+<br>
 
 ##
 
