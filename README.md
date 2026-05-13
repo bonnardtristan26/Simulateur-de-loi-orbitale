@@ -32,10 +32,8 @@
 ---
 
 ```
-
-- PYTHON/GUI.py → Interface graphique
-- système_solaire/systeme_solaire.py → Calculs physiques
-
+├── PYTHON/GUI.py → Interface graphique
+├── système_solaire/systeme_solaire.py → Calculs physiques
 ```
 
 ---
