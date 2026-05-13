@@ -10,7 +10,6 @@
 * Calcule les forces gravitationnelles entre les corps célestes
 * Visualisation graphique avec interface Tkinter
 
-<br>
 
 ---
 
