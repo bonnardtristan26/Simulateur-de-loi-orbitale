@@ -19,3 +19,15 @@
 * Interface visuelle pour visualiser les orbites
 * Données réalistes des masses et distances des planètes
 
+<br>
+
+## Prérequis/Installation
+
+> Python 3.X
+
+> XXX
+
+> XXX
+
+##
+
