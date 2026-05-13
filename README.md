@@ -1,3 +1,3 @@
 <div align="center">
 
-## Simulateur de loi orbitale
+# Simulateur de loi orbitale
