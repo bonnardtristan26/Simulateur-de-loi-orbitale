@@ -4,9 +4,11 @@
 
 ---
 
-## Pourquoi faire un simulateur
-> Apprendre comment marche les lois de KEPLER d'un nouveau angle car fait par des étudiants en BTS CIEL de 1ère année.
+## Description du projet
 
-> C'est aussi un moyen pour nous de forger nos expértise dans le domainde du codage, en effet cela implique de gros calcule avec beaucoup de données.
+* Simulateur du système solaire basé sur les lois gravitationnelles
+* Calcule les forces gravitationnelles entre les corps célestes
+* Visualisation graphique avec interface Tkinter
 
-## L'astronomie ?
+
+
