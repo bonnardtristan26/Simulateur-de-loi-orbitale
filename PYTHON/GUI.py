@@ -31,15 +31,11 @@ def to_percentage(distance, distance_max) :
 
 def a_lechelle(indexe1, indexe2) :
     
-    #DISTANCE MAXIMALE DE CANVA
-    #planète la plus éloignée + marge de pixels pour pas que ça dépasse le canva = distance maximale
-    
-    #par rapport a cette distance max, il faudra remettre à l'échelle les distances des planètes pour que ça reste réaliste
-    #mais que ça reste visible dans le canva
-    
     pourcentage = to_percentage(systeme_solaire.CorpsCelesteTest[indexe1][indexe2], systeme_solaire.distance_max)
     
-    return systeme_solaire.distance_max * (pourcentage*(10**-2))
+    print("A l'échelle :", 600 * (pourcentage*(1e-2)))
+    
+    return 600 * (pourcentage*(1e-2))
     
     #et faudra faire de même pour la taille de la planète
  
@@ -67,8 +63,8 @@ canvas.create_oval(*points, fill='yellow')
 
 #CERCLE MERCURE
 
-HG = to_cartesian(hauteur, a_lechelle(2, 2), -10, -10)
-BD = to_cartesian(hauteur, a_lechelle(2, 2), 10, 10)
+HG = to_cartesian(hauteur, a_lechelle(1, 1), -10, -10)
+BD = to_cartesian(hauteur, a_lechelle(1, 1), 10, 10)
 
 
 points =(
@@ -83,7 +79,7 @@ canvas.create_oval(*points, fill='grey')
 
 root.mainloop()
 
-iterations = 1000
+iterations = 0
 
 for i in range(iterations):
     print("Iteration", i + 1)

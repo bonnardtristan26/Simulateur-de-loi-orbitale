@@ -28,7 +28,7 @@ CorpsCelesteTest = np.array([
 ], dtype=float)
 
 dt = 3600
-iterations = 10
+iterations = 0
 distance_max = 7.375e9
 
 PositionX = CorpsCeleste[:, 3]
@@ -41,7 +41,7 @@ def ForceGravitationnelle(masse_planet, masse_soleil, dx) :
 
 def calculerForceGravitationnelle(masse_planet, masse_soleil, dx) :
     G = 6.67430e-11
-    return G * masse_planet * masse_soleil / dx
+    return G * masse_planet * masse_soleil / dx**2
 
 planets = [
     ("Mercure", 1),
@@ -60,7 +60,7 @@ for i in range(iterations):
     for name, idx in planets:
         m_p = CorpsCeleste[idx][0]
         m_s = CorpsCeleste[0][0]
-        dx = float((CorpsCeleste[idx][1]))**2
+        dx = float((CorpsCeleste[idx][1]))
         Fx = ForceGravitationnelle(m_p, m_s, dx)
         print("Soleil - " + name + ": Force gravitationnelle X :", Fx)
         ax = Fx / m_p
