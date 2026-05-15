@@ -67,8 +67,8 @@ largeur = 1300
 #BD = to_cartesian(hauteur, 1300 + int(a_lechelle_distance(0, 1)), int(a_lechelle_taille(0, 5, 0, 5)) + 5, int(a_lechelle_taille(0, 5, 0, 5)) + 5)
 
 #REPRESENTATION NON REALISTE
-HG = to_cartesian(hauteur, largeur, -25, -25)
-BD = to_cartesian(hauteur, largeur, 25, 25)
+#HG = to_cartesian(hauteur, largeur, -25, -25)
+#BD = to_cartesian(hauteur, largeur, 25, 25)
 
 
 points =(
@@ -84,169 +84,177 @@ canvas.create_oval(*points, fill='yellow')
 #REPRESENTATION REALISTE
 #Mercure est invisible car sa valeur entière est ~0.3, ce qui est arrondi à 0 par Python.
 #Les planètes ayant une valeur de taille au dessus de 5 dixième sont arrondis à l'entier supérieur, quand à ceux en dessous sont arrondis à l'entier inférieur
-HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(1, 1)), int(-a_lechelle_taille(1, 5, 0, 5)), int(-a_lechelle_taille(1, 5, 0, 5)))
-BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(1, 1)), int(a_lechelle_taille(1, 5, 0, 5)), int(a_lechelle_taille(1, 5, 0, 5)))
+#HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(1, 1)), int(-a_lechelle_taille(1, 5, 0, 5)), int(-a_lechelle_taille(1, 5, 0, 5)))
+#BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(1, 1)), int(a_lechelle_taille(1, 5, 0, 5)), int(a_lechelle_taille(1, 5, 0, 5)))
 
-#REPRESENTATION NON REALISTE
-#HG = to_cartesian(hauteur, largeur + 100, -3, -3)
-#BD = to_cartesian(hauteur, largeur + 100, 3, 3)
+def dessiner_mercure() :
+    #REPRESENTATION NON REALISTE
+    HG = to_cartesian(hauteur, largeur + 100, -3, -3)
+    BD = to_cartesian(hauteur, largeur + 100, 3, 3)
 
-print("Taille minus MERCURE :", -a_lechelle_taille(1, 5, 0, 5))
-print("Taille plus MERCURE :", a_lechelle_taille(1, 5, 0, 5))
+    #print("Taille minus MERCURE :", -a_lechelle_taille(1, 5, 0, 5))
+    #print("Taille plus MERCURE :", a_lechelle_taille(1, 5, 0, 5))
 
-points =(
-    HG,
-    BD
-)
+    points =(
+        HG,
+        BD
+    )
 
-canvas.create_oval(*points, fill='grey')
+    canvas.create_oval(*points, fill='grey')
 
 ################################################################################################################################################""""
 #Cercle VENUS
 
 #REPRESENTATION REALISTE
-HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(2, 1)), int(-a_lechelle_taille(2, 5, 0, 5)), int(-a_lechelle_taille(2, 5, 0, 5)))
-BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(2, 1)), int(a_lechelle_taille(2, 5, 0, 5)), int(a_lechelle_taille(2, 5, 0, 5)))
+#HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(2, 1)), int(-a_lechelle_taille(2, 5, 0, 5)), int(-a_lechelle_taille(2, 5, 0, 5)))
+#BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(2, 1)), int(a_lechelle_taille(2, 5, 0, 5)), int(a_lechelle_taille(2, 5, 0, 5)))
 
-#REPRESENTATION NON REALISTE
-#HG = to_cartesian(hauteur, 150 + largeur, -7, -7)
-#BD = to_cartesian(hauteur, 150 + largeur, 7, 7)
+def dessiner_venus() :
+    #REPRESENTATION NON REALISTE
+    HG = to_cartesian(hauteur, 150 + largeur, -7, -7)
+    BD = to_cartesian(hauteur, 150 + largeur, 7, 7)
 
-print("Taille minus VENUS :", -a_lechelle_taille(2, 5, 0, 5))
-print("Taille plus VENUS :", a_lechelle_taille(2, 5, 0, 5))
+    #print("Taille minus VENUS :", -a_lechelle_taille(2, 5, 0, 5))
+    #print("Taille plus VENUS :", a_lechelle_taille(2, 5, 0, 5))
 
-points =(
-    HG,
-    BD
-)
+    points =(
+        HG,
+        BD
+    )
 
-canvas.create_oval(*points, fill='tan1')
+    canvas.create_oval(*points, fill='tan1')
 
 ################################################################################################################################################""""
 #Cercle TERRE
 
 #REPRESENTATION REALISTE
-HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(3, 1)), int(-a_lechelle_taille(3, 5, 0, 5)), int(-a_lechelle_taille(3, 5, 0, 5)))
-BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(3, 1)), int(a_lechelle_taille(3, 5, 0, 5)), int(a_lechelle_taille(3, 5, 0, 5)))
+#HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(3, 1)), int(-a_lechelle_taille(3, 5, 0, 5)), int(-a_lechelle_taille(3, 5, 0, 5)))
+#BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(3, 1)), int(a_lechelle_taille(3, 5, 0, 5)), int(a_lechelle_taille(3, 5, 0, 5)))
 
-#REPRESENTATION NON REALISTE
-#HG = to_cartesian(hauteur, 200 + largeur, -7, -7)
-#BD = to_cartesian(hauteur, 200 + largeur, 7, 7)
+def dessiner_terre() :
+    #REPRESENTATION NON REALISTE
+    HG = to_cartesian(hauteur, 200 + largeur, -7, -7)
+    BD = to_cartesian(hauteur, 200 + largeur, 7, 7)
 
-print("Taille minus TERRE :", -a_lechelle_taille(3, 5, 0, 5))
-print("Taille plus TERRE :", a_lechelle_taille(3, 5, 0, 5))
+    #print("Taille minus TERRE :", -a_lechelle_taille(3, 5, 0, 5))
+    #print("Taille plus TERRE :", a_lechelle_taille(3, 5, 0, 5))
 
-points =(
-    HG,
-    BD
-)
+    points =(
+        HG,
+        BD
+    )
 
-canvas.create_oval(*points, fill='blue3')
+    canvas.create_oval(*points, fill='blue3')
 
 ################################################################################################################################################""""
 #Cercle MARS
 
 #REPRESENTATION REALISTE
-HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(4, 1)), int(-a_lechelle_taille(4, 5, 0, 5)), int(-a_lechelle_taille(4, 5, 0, 5)))
-BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(4, 1)), int(a_lechelle_taille(4, 5, 0, 5)), int(a_lechelle_taille(4, 5, 0, 5)))
+#HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(4, 1)), int(-a_lechelle_taille(4, 5, 0, 5)), int(-a_lechelle_taille(4, 5, 0, 5)))
+#BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(4, 1)), int(a_lechelle_taille(4, 5, 0, 5)), int(a_lechelle_taille(4, 5, 0, 5)))
 
-#REPRESENTATION NON REALISTE
-#HG = to_cartesian(hauteur, 250 + largeur, -4, -4)
-#BD = to_cartesian(hauteur, 250 + largeur, 4, 4)
+def dessiner_mars() :
+    #REPRESENTATION NON REALISTE
+    HG = to_cartesian(hauteur, 250 + largeur, -4, -4)
+    BD = to_cartesian(hauteur, 250 + largeur, 4, 4)
 
-print("Taille minus MARS :", -a_lechelle_taille(4, 5, 0, 5))
-print("Taille plus MARS :", a_lechelle_taille(4, 5, 0, 5))
+    #print("Taille minus MARS :", -a_lechelle_taille(4, 5, 0, 5))
+    #print("Taille plus MARS :", a_lechelle_taille(4, 5, 0, 5))
 
-points =(
-    HG,
-    BD
-)
+    points =(
+        HG,
+        BD
+    )
 
-canvas.create_oval(*points, fill='red3')
+    canvas.create_oval(*points, fill='red3')
 
 ################################################################################################################################################""""
 #Cercle JUPITER
 
 #REPRESENTATION REALISTE
-HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(5, 1)), int(-a_lechelle_taille(5, 5, 0, 5)), int(-a_lechelle_taille(5, 5, 0, 5)))
-BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(5, 1)), int(a_lechelle_taille(5, 5, 0, 5)), int(a_lechelle_taille(5, 5, 0, 5)))
+#HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(5, 1)), int(-a_lechelle_taille(5, 5, 0, 5)), int(-a_lechelle_taille(5, 5, 0, 5)))
+#BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(5, 1)), int(a_lechelle_taille(5, 5, 0, 5)), int(a_lechelle_taille(5, 5, 0, 5)))
 
-#REPRESENTATION NON REALISTE
-#HG = to_cartesian(hauteur, 365 + largeur, -40, -40)
-#BD = to_cartesian(hauteur, 365 + largeur, 40, 40)
+def dessiner_jupiter() :
+    #REPRESENTATION NON REALISTE
+    HG = to_cartesian(hauteur, 365 + largeur, -40, -40)
+    BD = to_cartesian(hauteur, 365 + largeur, 40, 40)
 
-#print("Taille minus :", -a_lechelle_taille(5, 5, 0, 5))
-#print("Taille plus :", a_lechelle_taille(5, 5, 0, 5))
+    #print("Taille minus :", -a_lechelle_taille(5, 5, 0, 5))
+    #print("Taille plus :", a_lechelle_taille(5, 5, 0, 5))
 
-points =(
-    HG,
-    BD
-)
+    points =(
+        HG,
+        BD
+    )
 
-canvas.create_oval(*points, fill='burlywood1')
+    canvas.create_oval(*points, fill='burlywood1')
 
 ################################################################################################################################################""""
 #Cercle SATURNE
 
 #REPRESENTATION REALISTE
-HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(6, 1)), int(-a_lechelle_taille(6, 5, 0, 5)), int(-a_lechelle_taille(6, 5, 0, 5)))
-BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(6, 1)), int(a_lechelle_taille(6, 5, 0, 5)), int(a_lechelle_taille(6, 5, 0, 5)))
+#HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(6, 1)), int(-a_lechelle_taille(6, 5, 0, 5)), int(-a_lechelle_taille(6, 5, 0, 5)))
+#BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(6, 1)), int(a_lechelle_taille(6, 5, 0, 5)), int(a_lechelle_taille(6, 5, 0, 5)))
 
-#REPRESENTATION NON REALISTE
-#HG = to_cartesian(hauteur, 545 + largeur, -35, -35)
-#BD = to_cartesian(hauteur, 545 + largeur, 35, 35)
+def dessiner_saturne() :
+    #REPRESENTATION NON REALISTE
+    HG = to_cartesian(hauteur, 545 + largeur, -35, -35)
+    BD = to_cartesian(hauteur, 545 + largeur, 35, 35)
 
-#print("Taille minus :", -a_lechelle_taille(6, 5, 0, 5))
-#print("Taille plus :", a_lechelle_taille(6, 5, 0, 5))
+    #print("Taille minus :", -a_lechelle_taille(6, 5, 0, 5))
+    #print("Taille plus :", a_lechelle_taille(6, 5, 0, 5))
 
-points =(
-    HG,
-    BD
-)
+    points =(
+        HG,
+        BD
+    )
 
-canvas.create_oval(*points, fill='bisque1')
+    canvas.create_oval(*points, fill='bisque1')
 
 ################################################################################################################################################""""
 #Cercle URANUS
 
 #REPRESENTATION REALISTE
-HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(7, 1)), int(-a_lechelle_taille(7, 5, 0, 5)), int(-a_lechelle_taille(7, 5, 0, 5)))
-BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(7, 1)), int(a_lechelle_taille(7, 5, 0, 5)), int(a_lechelle_taille(7, 5, 0, 5)))
+#HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(7, 1)), int(-a_lechelle_taille(7, 5, 0, 5)), int(-a_lechelle_taille(7, 5, 0, 5)))
+#BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(7, 1)), int(a_lechelle_taille(7, 5, 0, 5)), int(a_lechelle_taille(7, 5, 0, 5)))
 
-#REPRESENTATION NON REALISTE
-#HG = to_cartesian(hauteur, 670 + largeur, -13, -13)
-#BD = to_cartesian(hauteur, 670 + largeur, 13, 13)
+def dessiner_uranus() :
+    #REPRESENTATION NON REALISTE
+    HG = to_cartesian(hauteur, 670 + largeur, -13, -13)
+    BD = to_cartesian(hauteur, 670 + largeur, 13, 13)
 
-#print("Taille minus :", -a_lechelle_taille(7, 5, 0, 5))
-#print("Taille plus :", a_lechelle_taille(7, 5, 0, 5))
+    #print("Taille minus :", -a_lechelle_taille(7, 5, 0, 5))
+    #print("Taille plus :", a_lechelle_taille(7, 5, 0, 5))
 
-points =(
-    HG,
-    BD
-)
+    points =(
+        HG,
+        BD
+    )
 
-canvas.create_oval(*points, fill='snow1')
+    canvas.create_oval(*points, fill='snow1')
 
 ################################################################################################################################################""""
 #Cercle NEPTUNE
 
 #REPRESENTATION REALISTE
-HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(8, 1)), int(-a_lechelle_taille(8, 5, 0, 5)), int(-a_lechelle_taille(8, 5, 0, 5)))
-BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(8, 1)), int(a_lechelle_taille(8, 5, 0, 5)), int(a_lechelle_taille(8, 5, 0, 5)))
+#HG = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(8, 1)), int(-a_lechelle_taille(8, 5, 0, 5)), int(-a_lechelle_taille(8, 5, 0, 5)))
+#BD = to_cartesian(hauteur, 1360 + int(a_lechelle_distance(8, 1)), int(a_lechelle_taille(8, 5, 0, 5)), int(a_lechelle_taille(8, 5, 0, 5)))
 
-#REPRESENTATION NON REALISTE
-#HG = to_cartesian(hauteur, 745 + largeur, -13, -13)
-#BD = to_cartesian(hauteur, 745 + largeur, 13, 13)
+def dessiner_neptune() :
+    #REPRESENTATION NON REALISTE
+    HG = to_cartesian(hauteur, 745 + largeur, -13, -13)
+    BD = to_cartesian(hauteur, 745 + largeur, 13, 13)
 
-#print("Taille minus :", -a_lechelle_taille(8, 5, 0, 5))
-#print("Taille plus :", a_lechelle_taille(8, 5, 0, 5))
+    #print("Taille minus :", -a_lechelle_taille(8, 5, 0, 5))
+    #print("Taille plus :", a_lechelle_taille(8, 5, 0, 5))
 
-points =(
-    HG,
-    BD
-)
+    points =(
+        HG,
+        BD
+    )
 
-canvas.create_oval(*points, fill='deepskyblue')
+    canvas.create_oval(*points, fill='deepskyblue')
 
 ################################################################################################################################################""""
 
